@@ -1,6 +1,7 @@
 define jenkins::plugin($version=0) {
+  include jenkins::params
   $plugin            = "${name}.hpi"
-  $plugins_parent_dir = $jenkins::params::jenkins_dir
+  $plugin_parent_dir = $jenkins::params::jenkins_dir
   $plugin_dir = $jenkins::params::jenkins_plugin_dir
 
   if ($version != 0) {
