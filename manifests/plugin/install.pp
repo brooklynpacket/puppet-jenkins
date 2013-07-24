@@ -29,8 +29,9 @@ define jenkins::plugin::install($version=0) {
   if (!defined(User['jenkins'])) {
     user {
       'jenkins' :
-        ensure => present,
-        gid    => 'jenkins';
+        ensure     => present,
+        gid        => 'jenkins';
+        managehome => true,
     }
   }
 
